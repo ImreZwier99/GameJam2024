@@ -19,15 +19,15 @@ public class GemBehaviour : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //distance = Vector3.Distance(gem_Object.transform.position, wand_Object.transform.position);
-        //GemLogic();
-    }
+		if(placedGemCheck) gem_Object.transform.position = new Vector3(gemWandOrigin.position.x, gemWandOrigin.position.y, gemWandOrigin.position.z);
+		//distance = Vector3.Distance(gem_Object.transform.position, wand_Object.transform.position);
+		//GemLogic();
+	}
 
 	private void OnTriggerEnter(Collider other)
 	{
 		if (other.gameObject.CompareTag("gemOrigin") && !placedGemCheck)
 		{
-			gem_Object.transform.position = new Vector3(gemWandOrigin.position.x, gemWandOrigin.position.y, gemWandOrigin.position.z);
 			placedGemCheck = true;
 		}
 	}
