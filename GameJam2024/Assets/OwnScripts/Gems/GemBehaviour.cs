@@ -30,7 +30,11 @@ public class GemBehaviour : MonoBehaviour
 			gem_Object.transform.position = new Vector3(gemWandOrigin.position.x, gemWandOrigin.position.y, gemWandOrigin.position.z);
 			placedGemCheck = true;
 		}
-		else placedGemCheck = false;
+	}
+
+	private void OnTriggerExit(Collider other)
+	{
+		if (other.gameObject.CompareTag("gemOrigin")) placedGemCheck = false;
 	}
 
 	//   private void GemLogic()
