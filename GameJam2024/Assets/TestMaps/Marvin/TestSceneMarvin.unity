@@ -716,7 +716,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a15b01b8229e7f408c9c3ddac8d67c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wand_Object: {fileID: 154464135}
+  wand_Object: {fileID: 459007525}
   gem_Object: {fileID: 347083870}
   gemWandOrigin: {fileID: 459007526}
 --- !u!1 &360059038
@@ -1665,7 +1665,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1840681613
 GameObject:

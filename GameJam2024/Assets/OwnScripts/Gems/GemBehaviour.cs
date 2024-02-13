@@ -7,7 +7,7 @@ public class GemBehaviour : MonoBehaviour
     public GameObject wand_Object, gem_Object;
     public Transform gemWandOrigin;
     private bool placedGemCheck = false;
-    private float distance;
+    public float distance;
     // Start is called before the first frame update
     void Start()
     {
