@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class AltarBehaviour : MonoBehaviour
 {
-    public GameObject gem_Object;
+    public GameObject gem_Object, choiceCanvas;
     public Transform altarOrigin;
     public static bool gemCheck = false;
 	public ParticleSystem altarParticle;
@@ -23,9 +23,14 @@ public class AltarBehaviour : MonoBehaviour
 		if (gemCheck)
 		{
 			gem_Object.transform.position = new Vector3(altarOrigin.position.x, altarOrigin.position.y, altarOrigin.position.z);
-			altarParticle.Play();
+			//altarParticle.Play();
+			choiceCanvas.SetActive(true);
 		}
-		else altarParticle.Stop();
+		else
+		{
+			//altarParticle.Stop();
+			choiceCanvas.SetActive(false);
+		}
 	}
 
 	private void OnTriggerEnter(Collider other)
