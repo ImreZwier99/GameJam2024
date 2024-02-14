@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Anchor
   - gemOrigin
+  - weapon
   layers:
   - Default
   - TransparentFX
