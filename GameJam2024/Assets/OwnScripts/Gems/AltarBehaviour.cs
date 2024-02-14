@@ -22,7 +22,6 @@ public class AltarBehaviour : MonoBehaviour
 		if (gemCheck)
 		{
 			gem_Object.transform.position = new Vector3(altarOrigin.position.x, altarOrigin.position.y, altarOrigin.position.z);
-			pentagram.SetActive(true);
 			choiceCanvas.SetActive(true);
 		}
 		else
