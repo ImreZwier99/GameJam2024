@@ -24217,6 +24217,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Peasant Nolant(Free Version)
       objectReference: {fileID: 0}
+    - target: {fileID: 6157756480056121434, guid: 23de8ca0469d2dd4f8b365335e785035, type: 3}
+      propertyPath: timer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6157756480056121435, guid: 23de8ca0469d2dd4f8b365335e785035, type: 3}
       propertyPath: Player
       value: 
