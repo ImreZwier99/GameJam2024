@@ -7,7 +7,7 @@ public class AltarBehaviour : MonoBehaviour
     public GameObject gem_Object, choiceCanvas;
     public Transform altarOrigin;
     public static bool gemCheck = false;
-	public ParticleSystem altarParticle;
+	public ParticleSystem pentagram;
     //private float distance;
 
 
@@ -23,12 +23,12 @@ public class AltarBehaviour : MonoBehaviour
 		if (gemCheck)
 		{
 			gem_Object.transform.position = new Vector3(altarOrigin.position.x, altarOrigin.position.y, altarOrigin.position.z);
-			//altarParticle.Play();
+			//pentagram.Play();
 			choiceCanvas.SetActive(true);
 		}
 		else
 		{
-			//altarParticle.Stop();
+			//pentagram.Stop();
 			choiceCanvas.SetActive(false);
 		}
 	}
