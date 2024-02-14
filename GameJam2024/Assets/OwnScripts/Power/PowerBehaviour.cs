@@ -8,7 +8,7 @@ public class PowerBehaviour : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        gemMaterial.color = Color.white;
     }
 
     // Update is called once per frame
@@ -21,22 +21,22 @@ public class PowerBehaviour : MonoBehaviour
 	{
         if(AltarBehaviour.gemCheck == true)
 		{
-            if(powerNum == 1)
-			{
+            if (powerNum == 1)
+            {
                 gemMaterial.color = Color.red;
-			}
-            else if(powerNum == 2)
-			{
+            }
+            else if (powerNum == 2)
+            {
                 gemMaterial.color = Color.blue;
-			}
-            else if(powerNum == 3)
-			{
+            }
+            else if (powerNum == 3)
+            {
                 gemMaterial.color = Color.yellow;
-			}
-            else if(powerNum == 4)
-			{
+            }
+            else if (powerNum == 4)
+            {
                 gemMaterial.color = Color.green;
-			}
+            }
 		}
 	}
 }
