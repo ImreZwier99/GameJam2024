@@ -7,6 +7,7 @@ public class AltarBehaviour : MonoBehaviour
     public GameObject gem_Object;
     public Transform altarOrigin;
     public static bool gemCheck = false;
+	public ParticleSystem altarParticle;
     //private float distance;
 
 
@@ -19,7 +20,12 @@ public class AltarBehaviour : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-		if(gemCheck) gem_Object.transform.position = new Vector3(altarOrigin.position.x, altarOrigin.position.y, altarOrigin.position.z);
+		if (gemCheck)
+		{
+			gem_Object.transform.position = new Vector3(altarOrigin.position.x, altarOrigin.position.y, altarOrigin.position.z);
+			altarParticle.Play();
+		}
+		else altarParticle.Stop();
 	}
 
 	private void OnTriggerEnter(Collider other)
