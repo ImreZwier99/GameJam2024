@@ -16,7 +16,7 @@ public class FireSpell : MonoBehaviour
     
     int bulletsLeft, bulletsShot;
 
-    bool shooting, readytoshoot, reloading;
+    bool readytoshoot, reloading;
 
     public Camera myCamera;
     public Transform attackpoint;
@@ -47,18 +47,20 @@ public class FireSpell : MonoBehaviour
 
         foreach (var device in RightHandedControllers)
         {
-             Debug.Log(string.Format("Device name '{0}' has characteristics '{1}'", device.name, device.characteristics.ToString()));
              if (device.TryGetFeatureValue(UnityEngine.XR.CommonUsages.triggerButton, out triggerValue) && triggerValue)
              {
-                  Debug.Log("Trigger button is pressed.");
+                Spells(true);
+                Debug.Log("test");
              }
         }
+        
+    }
 
-
-
+    public void Spells(bool shooting)
+    {
         //check if allowed to hold down button
-        if (allowButtonHold) shooting = Input.GetButton("XRI_Right_trigger");
-        else shooting = Input.GetButtonDown("XRI_Right_trigger");
+       // if (allowButtonHold) shooting = Input.GetButton("XRI_Right_trigger");
+      //  else shooting = Input.GetButtonDown("XRI_Right_trigger");
 
         //reloading
         if (Input.GetButtonDown("XRI_Right_SecondaryButton") && bulletsLeft < magazineSize && !reloading) Reload();
@@ -72,7 +74,6 @@ public class FireSpell : MonoBehaviour
 
             Shoot();
         }
-        
     }
     private void Shoot()
     {
