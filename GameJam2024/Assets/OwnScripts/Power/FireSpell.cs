@@ -62,8 +62,6 @@ public class FireSpell : MonoBehaviour
        // if (allowButtonHold) shooting = Input.GetButton("XRI_Right_trigger");
       //  else shooting = Input.GetButtonDown("XRI_Right_trigger");
 
-        //reloading
-        if (Input.GetButtonDown("XRI_Right_SecondaryButton") && bulletsLeft < magazineSize && !reloading) Reload();
         //reload automatically when trying to shoot without ammo
         if (readytoshoot && shooting && !reloading && bulletsLeft <= 0) Reload();
 
