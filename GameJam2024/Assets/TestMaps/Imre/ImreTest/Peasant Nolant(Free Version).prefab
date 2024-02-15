@@ -228,7 +228,7 @@ GameObject:
   - component: {fileID: 6157756480056121431}
   m_Layer: 0
   m_Name: Peasant Nolant(Free Version)
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -277,10 +277,10 @@ NavMeshAgent:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 639302912724916381}
-  m_Enabled: 0
+  m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.00001
-  m_Speed: 1
+  m_Radius: 0.2
+  m_Speed: 0.2
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -291,7 +291,7 @@ NavMeshAgent:
   m_Height: 2
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 0
+  m_ObstacleAvoidanceType: 4
 --- !u!114 &6157756480056121435
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -304,11 +304,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54042c774179ffb4aadb004ab58b9ac3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player: {fileID: 0}
   Enemy: {fileID: 639302912724916381}
-  Speed: 0.003
-  isDead: 0
+  RotationSpeed: 250
   Health: 50
+  StoppingDistance: 25
   enemy: {fileID: 639302912724916381}
 --- !u!114 &6157756480056121434
 MonoBehaviour:
@@ -331,7 +330,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 639302912724916381}
   serializedVersion: 2
-  m_Mass: 0.2
+  m_Mass: 1
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
