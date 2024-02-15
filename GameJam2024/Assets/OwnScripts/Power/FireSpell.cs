@@ -13,10 +13,12 @@ public class FireSpell : MonoBehaviour
     public float timebetweenshooting, spread, reloadtime, timebetweenshots;
     public int magazineSize, bulletspertap;
     public bool allowButtonHold;
-    
-    int bulletsLeft, bulletsShot;
 
-    bool readytoshoot, reloading;
+    public bool shootTimer = false;
+    
+    public int bulletsLeft, bulletsShot;
+
+    public bool readytoshoot, reloading;
 
     public Camera myCamera;
     public Transform attackpoint;
@@ -36,6 +38,17 @@ public class FireSpell : MonoBehaviour
         SpellActivation();
 
         if (ammunitionDisplay != null) ammunitionDisplay.SetText(bulletsLeft / bulletspertap + " / " + magazineSize / bulletspertap);
+
+        if (shootTimer == true)
+        {
+            reloadtime -= Time.deltaTime;
+
+            if (reloadtime <= 0)
+            {
+                shootTimer = false;
+                readytoshoot = true;
+            }
+        }
     }
 
     public void SpellActivation()
@@ -52,6 +65,11 @@ public class FireSpell : MonoBehaviour
                 Spells(true);
                 Debug.Log("test");
              }
+            if (device.TryGetFeatureValue(UnityEngine.XR.CommonUsages.secondaryButton, out triggerValue) && triggerValue)
+            {
+                Debug.Log("test2");
+                if (bulletsLeft < magazineSize && !reloading) Reload();
+            }
         }
         
     }
@@ -59,11 +77,18 @@ public class FireSpell : MonoBehaviour
     public void Spells(bool shooting)
     {
         //check if allowed to hold down button
-       // if (allowButtonHold) shooting = Input.GetButton("XRI_Right_trigger");
-      //  else shooting = Input.GetButtonDown("XRI_Right_trigger");
+        // if (allowButtonHold) shooting = Input.GetButton("XRI_Right_trigger");
+        ///  else shooting = Input.GetButtonDown("XRI_Right_trigger");
 
+        //reloading
+        //if (Input.GetButtonDown("XRI_Right_SecondaryButton") && bulletsLeft < magazineSize && !reloading) Reload();
         //reload automatically when trying to shoot without ammo
-        if (readytoshoot && shooting && !reloading && bulletsLeft <= 0) Reload();
+        if (readytoshoot && shooting && !reloading && bulletsLeft <= 0)
+        {
+            Debug.Log("test6");
+            Reload();
+        }
+        
 
         //Shooting
         if (readytoshoot && shooting && !reloading && bulletsLeft > 0)
@@ -75,6 +100,7 @@ public class FireSpell : MonoBehaviour
     }
     private void Shoot()
     {
+        shootTimer = true;
         readytoshoot = false;
         //find the exact hit position using a raycast
         Ray ray = myCamera.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
@@ -114,7 +140,11 @@ public class FireSpell : MonoBehaviour
         }
 
         //if moore than one bulletspertap repeat shoot funtion
-        if (bulletsShot < bulletspertap && bulletsLeft > 0) Invoke("Shoot", timebetweenshots);
+        if (bulletsShot < bulletspertap && bulletsLeft > 0)
+        {
+            Debug.Log(" test 5");
+            Invoke("Shoot", timebetweenshots);
+        }
     }
 
     private void ResetShot()
@@ -124,12 +154,23 @@ public class FireSpell : MonoBehaviour
 
     private void Reload()
     {
-        reloading = true;
-        Invoke("ReloadFinished", reloadtime);
+        if (reloadtime <= 0)
+        {
+            Debug.Log("test4");
+            //shootTimer = true;
+            //reloading = true;
+            bulletsShot = 0;
+            ReloadFinished();
+        }
     }
-    private void ReloadFinished()
+    public void ReloadFinished()
     {
-       bulletsLeft = magazineSize;
-        reloading = false;
+        reloadtime = 3;
+        Debug.Log("test3");
+        bulletsLeft = magazineSize;
+        //reloading = false;
+        allowinvoke = true;
+        //shootTimer = false;
+        readytoshoot = true;
     }
 }
