@@ -1570,7 +1570,7 @@ GameObject:
   m_Component:
   - component: {fileID: 159646861}
   - component: {fileID: 159646860}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Wand_DropSound
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8063,7 +8063,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 344238768}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Complete XR Origin Set Up Variant
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8301,7 +8301,7 @@ GameObject:
   - component: {fileID: 374549439}
   - component: {fileID: 374549438}
   - component: {fileID: 374549437}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Wand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8330,8 +8330,11 @@ MonoBehaviour:
   magazineSize: 3
   bulletspertap: 3
   allowButtonHold: 1
+  shootTimer: 0
   bulletsLeft: 0
   bulletsShot: 0
+  readytoshoot: 0
+  reloading: 0
   myCamera: {fileID: 1092596040}
   attackpoint: {fileID: 1830860574}
   ammunitionDisplay: {fileID: 1388086828}
@@ -19790,7 +19793,7 @@ GameObject:
   - component: {fileID: 988537741}
   - component: {fileID: 988537743}
   - component: {fileID: 988537742}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: CrystalOriginPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29339,7 +29342,7 @@ GameObject:
   - component: {fileID: 1457719823}
   - component: {fileID: 1457719825}
   - component: {fileID: 1457719824}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: wand_low
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -35004,7 +35007,7 @@ GameObject:
   - component: {fileID: 1508033958}
   - component: {fileID: 1508033960}
   - component: {fileID: 1508033959}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: ring2_low
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41889,7 +41892,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1830860574}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Spell_originPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42295,7 +42298,7 @@ GameObject:
   - component: {fileID: 1886073423}
   - component: {fileID: 1886073425}
   - component: {fileID: 1886073424}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: ring1_low
   m_TagString: Untagged
   m_Icon: {fileID: 0}

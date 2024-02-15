@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using TMPro;
+using UnityEngine.XR.Interaction.Toolkit;
 
 public class FireSpell : MonoBehaviour
 {
@@ -103,31 +104,33 @@ public class FireSpell : MonoBehaviour
         shootTimer = true;
         readytoshoot = false;
         //find the exact hit position using a raycast
-        Ray ray = myCamera.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
-        RaycastHit hit;
+        //Ray ray = myCamera.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
+        //RaycastHit hit;
 
-        //check if ray hits something
-        Vector3 targetpoint;
-        if (Physics.Raycast(ray, out hit)) targetpoint = hit.point;
-        else targetpoint = ray.GetPoint(75);//random point
+        ////check if ray hits something
+        //Vector3 targetpoint;
+        ////if (Physics.Raycast(ray, out hit)) targetpoint = hit.point;
+        ////else targetpoint = ray.GetPoint(75);//random point
         
-        //calculate direction from attackpoint to targetpoint
-        Vector3 directionWithoutSpread = targetpoint - attackpoint.position;
+        ////calculate direction from attackpoint to targetpoint
+        //Vector3 directionWithoutSpread = targetpoint - attackpoint.position;
 
-        //calculate spread
-        float x = Random.Range(-spread, spread);
-        float y = Random.Range(-spread, spread);
+        ////calculate spread
+        //float x = Random.Range(-spread, spread);
+        //float y = Random.Range(-spread, spread);
 
-        //calculate new direction with spread 
-        Vector3 directionWithSpread = directionWithoutSpread + new Vector3(x, y, 0);//last digit is spread
+        ////calculate new direction with spread 
+        //Vector3 directionWithSpread = directionWithoutSpread + new Vector3(x, y, 0);//last digit is spread
 
         //instatiate Spell
         GameObject currentBullet = Instantiate(spell);
         //rotate bullet to shoot direction
-        currentBullet.transform.forward = directionWithSpread.normalized;
+        currentBullet.transform.position = attackpoint.position;
+        currentBullet.GetComponent<Rigidbody>().velocity = attackpoint.forward * shootforce;
+        Destroy(currentBullet, 5);
 
         //add force
-        currentBullet.GetComponent<Rigidbody>().AddForce(directionWithSpread.normalized * shootforce, ForceMode.Impulse);
+       // currentBullet.GetComponent<Rigidbody>().AddForce(directionWithSpread.normalized * shootforce, ForceMode.Impulse);
 
         bulletsLeft--;
         bulletsShot++;
