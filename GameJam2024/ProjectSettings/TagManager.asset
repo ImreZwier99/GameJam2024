@@ -8,6 +8,7 @@ TagManager:
   - gemOrigin
   - void
   - weapon
+  - Enemy
   layers:
   - Default
   - TransparentFX
