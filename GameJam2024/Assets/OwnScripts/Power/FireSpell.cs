@@ -126,7 +126,7 @@ public class FireSpell : MonoBehaviour
         GameObject currentBullet = Instantiate(spell);
         //rotate bullet to shoot direction
         currentBullet.transform.position = attackpoint.position;
-        currentBullet.GetComponent<Rigidbody>().velocity = attackpoint.forward * shootforce;
+        currentBullet.GetComponent<Rigidbody>().velocity = attackpoint.up * shootforce;
         Destroy(currentBullet, 5);
 
         //add force
