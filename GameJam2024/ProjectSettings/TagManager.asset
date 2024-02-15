@@ -9,6 +9,7 @@ TagManager:
   - void
   - weapon
   - Enemy
+  - SpawnPoint
   layers:
   - Default
   - TransparentFX
