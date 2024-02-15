@@ -2,9 +2,8 @@ fileFormatVersion: 2
 <<<<<<<< HEAD:GameJam2024/Assets/TestMaps/Imre/ImreTest.unity.meta
 guid: e6597a7445ff72740b91119afd9470d0
 ========
-guid: dabc44d9599bac34d8118df8daa4c940
-folderAsset: yes
->>>>>>>> origin/Marvin:GameJam2024/Assets/TestMaps/Marvin/Materials.meta
+guid: 6e23f2e5628e6f642a999b396c7b207c
+>>>>>>>> origin/Diego:GameJam2024/Assets/TestMaps/Marvin/TestSceneMarvin.unity.meta
 DefaultImporter:
   externalObjects: {}
   userData: 
