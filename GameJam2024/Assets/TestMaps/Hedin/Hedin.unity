@@ -13219,7 +13219,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   WaveSpawner: {fileID: 1368661824}
-  UI: {fileID: 1083287868}
+  UI: {fileID: 633005302}
 --- !u!114 &1083287871
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -31641,7 +31641,7 @@ Camera:
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 2147483647
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -31650,7 +31650,7 @@ Camera:
   m_AllowMSAA: 1
   m_AllowDynamicResolution: 0
   m_ForceIntoRT: 0
-  m_OcclusionCulling: 1
+  m_OcclusionCulling: 0
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
 --- !u!1 &9014170783480289820
