@@ -122,7 +122,7 @@ public class FireSpell : MonoBehaviour
         Vector3 directionWithSpread = directionWithoutSpread + new Vector3(x, y, 0);//last digit is spread
 
         //instatiate Spell
-        GameObject currentBullet = Instantiate(spell, attackpoint.position, Quaternion.identity);
+        GameObject currentBullet = Instantiate(spell);
         //rotate bullet to shoot direction
         currentBullet.transform.forward = directionWithSpread.normalized;
 
