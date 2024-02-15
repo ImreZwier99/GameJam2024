@@ -40,6 +40,22 @@ public class FireSpell : MonoBehaviour
 
     public void SpellActivation()
     {
+        var leftHandedControllers = new List<UnityEngine.XR.InputDevice>();
+        var desiredCharacteristics = UnityEngine.XR.InputDeviceCharacteristics.HeldInHand | UnityEngine.XR.InputDeviceCharacteristics.Left | UnityEngine.XR.InputDeviceCharacteristics.Controller;
+        UnityEngine.XR.InputDevices.GetDevicesWithCharacteristics(desiredCharacteristics, leftHandedControllers);
+        bool triggerValue;
+
+        foreach (var device in leftHandedControllers)
+        {
+             Debug.Log(string.Format("Device name '{0}' has characteristics '{1}'", device.name, device.characteristics.ToString()));
+             if (device.TryGetFeatureValue(UnityEngine.XR.CommonUsages.triggerButton, out triggerValue) && triggerValue)
+             {
+                  Debug.Log("Trigger button is pressed.");
+             }
+        }
+
+
+
         //check if allowed to hold down button
         if (allowButtonHold) shooting = Input.GetButton("XRI_Right_trigger");
         else shooting = Input.GetButtonDown("XRI_Right_trigger");
