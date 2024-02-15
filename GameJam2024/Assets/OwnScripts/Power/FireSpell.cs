@@ -130,7 +130,7 @@ public class FireSpell : MonoBehaviour
         Destroy(currentBullet, 5);
 
         //add force
-       // currentBullet.GetComponent<Rigidbody>().AddForce(directionWithSpread.normalized * shootforce, ForceMode.Impulse);
+        //currentBullet.GetComponent<Rigidbody>().AddForce(directionWithSpread.normalized * shootforce, ForceMode.Impulse);
 
         bulletsLeft--;
         bulletsShot++;
