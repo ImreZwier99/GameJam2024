@@ -5,8 +5,9 @@ using UnityEngine.AI;
 
 public class EnemyAI : MonoBehaviour
 {
-    public GameObject Player;
+    private GameObject[] Player;
     public GameObject Enemy;
+    private Transform targetedEnemy;
     public float Speed = 0.001f;
     public bool isDead;
     public int Health = 50;
@@ -14,7 +15,7 @@ public class EnemyAI : MonoBehaviour
     public GameObject enemy;
     void Update()
     {
-        Enemy.transform.position = Vector3.MoveTowards(Enemy.transform.position, Player.transform.position, Speed);
+        Enemy.transform.position = Vector3.MoveTowards(Enemy.transform.position, targetedEnemy.transform.position, Speed);
         //Enemy.SetDestination(Player.position);
         //Health = 50;
         colliders = enemy.GetComponentsInChildren<Collider>();
@@ -43,5 +44,10 @@ public class EnemyAI : MonoBehaviour
                 col.enabled = true;
             }
         }
+    }
+    public void Awake()
+    {
+        Player = GameObject.FindGameObjectsWithTag("Player");
+        targetedEnemy = Player[Random.Range(0, Player.Length)].transform;
     }
 }
