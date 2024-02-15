@@ -8,6 +8,7 @@ public class PowerBehaviour : MonoBehaviour
     public Material gemMaterial;
     public ParticleSystem pentagram, sideParticle1, sideParticle2, sideParticle3;
     public AudioSource enchantmentSound;
+    public static int powerNum = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,7 +16,7 @@ public class PowerBehaviour : MonoBehaviour
         pentagram.startColor = Color.white;
     }
 
-    public void ButtonBehaviour(int powerNum = 0)
+    public void ButtonBehaviour()
 	{
         enchantmentSound.Play();
         if(AltarBehaviour.gemCheck == true)
