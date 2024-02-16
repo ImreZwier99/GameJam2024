@@ -9,7 +9,7 @@ TagManager:
   - void
   - weapon
   - Enemy
-  - Wand
+  - SpawnPoint
   layers:
   - Default
   - TransparentFX

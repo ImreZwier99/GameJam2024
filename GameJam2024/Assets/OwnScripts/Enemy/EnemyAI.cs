@@ -57,18 +57,42 @@ public class EnemyAI : MonoBehaviour
 
     public void EnemyDead()
     {
+        if (waveSpawner == null)
+        {
+            waveSpawner = FindObjectOfType<WaveSpawner>();
+            if (waveSpawner == null)
+            {
+                Debug.LogWarning("WaveSpawner not found in the scene!");
+                return; 
+            }
+        }
+
         isDead = true;
         agent.enabled = false;
         GetComponent<Animator>().enabled = false;
         GetComponent<EnemyDieTimer>().enabled = true;
         GetComponent<BoxCollider>().enabled = false;
 
-        waveSpawner.waves[waveSpawner.currentWaveIndex].enemiesLeft--;
+        if (enemy == null)
+        {
+            Debug.LogWarning("enemy reference is null!");
+            return;
+        }
 
         colliders = enemy.GetComponentsInChildren<Collider>();
+
+        if (colliders == null || colliders.Length == 0)
+        {
+            Debug.LogWarning("No colliders found on enemy or its children!");
+            return;
+        }
+
         foreach (Collider col in colliders)
         {
             col.enabled = true;
         }
+
+        waveSpawner.DecrementEnemiesLeft();
     }
+
 }
