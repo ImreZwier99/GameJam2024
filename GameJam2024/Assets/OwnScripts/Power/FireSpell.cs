@@ -9,6 +9,8 @@ public class FireSpell : MonoBehaviour
 {
     public GameObject spell;
 
+    //public GameObject Controller;
+
     public float shootforce, upwardforce;
 
     public float timebetweenshooting, spread, reloadtime, timebetweenshots;
@@ -50,7 +52,7 @@ public class FireSpell : MonoBehaviour
                 readytoshoot = true;
             }
         }
-    }
+    }    
 
     public void SpellActivation()
     {
@@ -126,8 +128,10 @@ public class FireSpell : MonoBehaviour
         GameObject currentBullet = Instantiate(spell);
         //rotate bullet to shoot direction
         currentBullet.transform.position = attackpoint.position;
+        currentBullet.transform.rotation = transform.rotation * Quaternion.identity;
         currentBullet.GetComponent<Rigidbody>().velocity = attackpoint.up * shootforce;
         Destroy(currentBullet, 5);
+
 
         //add force
         //currentBullet.GetComponent<Rigidbody>().AddForce(directionWithSpread.normalized * shootforce, ForceMode.Impulse);

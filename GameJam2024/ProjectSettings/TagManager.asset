@@ -9,6 +9,7 @@ TagManager:
   - void
   - weapon
   - Enemy
+  - Wand
   layers:
   - Default
   - TransparentFX
