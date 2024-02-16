@@ -8199,10 +8199,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pentagramObject: {fileID: 1484585039}
   gemMaterial: {fileID: 2100000, guid: 6a6944f4904547e4fb039789da5fcd85, type: 2}
+  spellMaterial: {fileID: 2100000, guid: 13c84d6a9cfafe3419842283efec054b, type: 2}
+  trailSpellmaterial: {fileID: 2100000, guid: de33c3a06f519fa4999754888cdd2fba, type: 2}
   pentagram: {fileID: 1484585041}
   sideParticle1: {fileID: 323285369}
   sideParticle2: {fileID: 442018384}
   sideParticle3: {fileID: 1364485194}
+  spellParticle: {fileID: 2032536533}
   enchantmentSound: {fileID: 318215291}
 --- !u!4 &368658510
 Transform:
@@ -8330,8 +8333,11 @@ MonoBehaviour:
   magazineSize: 3
   bulletspertap: 3
   allowButtonHold: 1
+  shootTimer: 0
   bulletsLeft: 0
   bulletsShot: 0
+  readytoshoot: 0
+  reloading: 0
   myCamera: {fileID: 1092596040}
   attackpoint: {fileID: 1830860574}
   ammunitionDisplay: {fileID: 1388086828}
@@ -43153,6 +43159,72 @@ MonoBehaviour:
   m_DwellTime: 1
   m_Unparent: 1
   m_TurnOffAtStart: 1
+--- !u!1001 &2032536532
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5619842020931637826, guid: 943e0c82c1928d248a3d1147de29bda8, type: 3}
+      propertyPath: m_Name
+      value: Firebal
+      objectReference: {fileID: 0}
+    - target: {fileID: 5619842020931637826, guid: 943e0c82c1928d248a3d1147de29bda8, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5619842020931637830, guid: 943e0c82c1928d248a3d1147de29bda8, type: 3}
+      propertyPath: m_RootOrder
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 5619842020931637830, guid: 943e0c82c1928d248a3d1147de29bda8, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.369
+      objectReference: {fileID: 0}
+    - target: {fileID: 5619842020931637830, guid: 943e0c82c1928d248a3d1147de29bda8, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5619842020931637830, guid: 943e0c82c1928d248a3d1147de29bda8, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1.957
+      objectReference: {fileID: 0}
+    - target: {fileID: 5619842020931637830, guid: 943e0c82c1928d248a3d1147de29bda8, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.48170602
+      objectReference: {fileID: 0}
+    - target: {fileID: 5619842020931637830, guid: 943e0c82c1928d248a3d1147de29bda8, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.48170602
+      objectReference: {fileID: 0}
+    - target: {fileID: 5619842020931637830, guid: 943e0c82c1928d248a3d1147de29bda8, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.517648
+      objectReference: {fileID: 0}
+    - target: {fileID: 5619842020931637830, guid: 943e0c82c1928d248a3d1147de29bda8, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.51764786
+      objectReference: {fileID: 0}
+    - target: {fileID: 5619842020931637830, guid: 943e0c82c1928d248a3d1147de29bda8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 5619842020931637830, guid: 943e0c82c1928d248a3d1147de29bda8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5619842020931637830, guid: 943e0c82c1928d248a3d1147de29bda8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 94.12
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 943e0c82c1928d248a3d1147de29bda8, type: 3}
+--- !u!198 &2032536533 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 5619842019307414292, guid: 943e0c82c1928d248a3d1147de29bda8, type: 3}
+  m_PrefabInstance: {fileID: 2032536532}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2040848112
 GameObject:
   m_ObjectHideFlags: 0
