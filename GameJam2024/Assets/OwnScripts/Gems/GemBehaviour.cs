@@ -6,7 +6,7 @@ public class GemBehaviour : MonoBehaviour
 {
     public GameObject gem_Object;
     public Transform gemWandOrigin;
-    private bool placedGemCheck = false;
+    public bool placedGemCheck = false;
     //private float distance;
 
 
